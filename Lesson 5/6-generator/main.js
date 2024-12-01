@@ -14,6 +14,7 @@
 // console.log(fooGenerator.next());
 // console.log(fooGenerator.next());
 
+//Можна зробити карточну гру
 function* cardsHolder() {
     const cards = [
         {value: 6, suite: 'diamond'},
@@ -29,10 +30,10 @@ function* cardsHolder() {
 
 let cardsHolderGenerator = cardsHolder();
 let card1 = cardsHolderGenerator.next();
-// console.log(card1.value);
+// console.log(card1.value); //{value: 6, suite: 'diamond'}
 console.log(card1);
 
-let card2 = cardsHolderGenerator.next();
+let card2 = cardsHolderGenerator.next(); //done: false, value: {value: 7, suite: 'spade'
 console.log(card2);
 
 let card3 = cardsHolderGenerator.next();

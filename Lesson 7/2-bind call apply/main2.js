@@ -49,29 +49,29 @@
 
 
 //спосіб щоб скопіювати функцію і викликати її від іншого обʼєкта
-// let user = new User('vasya', 31);
-// user.greeting = msg => {
-//     return `${msg} my name is ${this.name}`;
+let user = new User('vasya', 31);
+user.greeting = function (msg) {
+    return `${msg} my name is ${this.name}`;
+};
+
+let user2 = new User('petya', 12345678);
+let greetingCopy = user.greeting.bind(user2, 'privet');
+// let greetingCopy = user.greeting.bind(user2);
+console.log(greetingCopy('asdfghjkl;'));
+
+
+// let obj = {num: 2};
+//
+// function add(a, b) {
+//     return this.num + a + b;
 // }
 //
-// let user2 = new User('petya', 12345678);
-// // let greetingCopy = user.greeting.bind(user2, 'privet');
-// let greetingCopy = user.greeting.bind(user2);
-// console.log(greetingCopy('asdfghjkl;'));
-
-
-let obj = {num: 2};
-
-function add(a, b) {
-    return this.num + a + b;
-}
-
-const resultCall = add.call(obj, 3, 5);
-const resultApply = add.apply(obj, [3, 5]);
-const funcBind = add.bind(obj, 3, 5);
-const resultBind = funcBind();
-
-console.log(resultCall, resultApply, resultBind);
+// const resultCall = add.call(obj, 3, 5);
+// const resultApply = add.apply(obj, [3, 5]);
+// const funcBind = add.bind(obj, 3, 5);
+// const resultBind = funcBind();
+//
+// console.log(resultCall, resultApply, resultBind);
 
 
 
